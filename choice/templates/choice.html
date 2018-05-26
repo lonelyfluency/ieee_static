@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IEEE21班意愿调研</title>
+</head>
+<br>
+请大家输入自己想选的方向和毕业以后的打算。<br>
+方向： 1.CS，2.信工，3.自动化，4.电气。(第二个方向不选请填0)<br>
+打算： 1.工作，2.保研，3.出国。
+<form method='post'>
+{% csrf_token %}
+{{ form }}
+<input type="submit" value="提交">
+</form>
+本网页信息完全匿名，请大家放心填写。<br>
+获得的信息会交给李少远让他看看我们怎么想的。
+</body>
+</html>
