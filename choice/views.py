@@ -6,29 +6,40 @@ import json
 # Create your views here.
 
 global num
-global cs
-global ie
-global auto
-global ep
+global cs1
+global ie1
+global auto1
+global ep1
+global cs2
+global ie2
+global auto2
+global ep2
 global work
 global yan
 global abroad
 num = 0
-cs = 0
-ie = 0
-auto = 0
-ep = 0
-
+cs1 = 0
+ie1 = 0
+auto1 = 0
+ep1 = 0
+cs2 = 0
+ie2 = 0
+auto2 = 0
+ep2 = 0
 work = 0
 yan = 0
 abroad = 0
 
 def choose(request):
     global num
-    global cs
-    global ie
-    global auto
-    global ep
+    global cs1
+    global ie1
+    global auto1
+    global ep1
+    global cs2
+    global ie2
+    global auto2
+    global ep2
     global work
     global yan
     global abroad
@@ -39,23 +50,23 @@ def choose(request):
             dir2 = form.cleaned_data['direction2']
             tmp = form.cleaned_data['future_plan']
             if dir1 == 1:
-                cs += 1
+                cs1 += 1
             elif dir1 == 2:
-                ie += 1
+                ie1 += 1
             elif dir1 == 3:
-                auto += 1
+                auto1 += 1
             elif dir1 == 4:
-                ep += 1
+                ep1 += 1
             else:
                 return HttpResponse("Error input!")
             if dir2 == 1:
-                cs += 1
+                cs2 += 1
             elif dir2 == 2:
-                ie += 1
+                ie2 += 1
             elif dir2 == 3:
-                auto += 1
+                auto2 += 1
             elif dir2 == 4:
-                ep += 1
+                ep2 += 1
             elif dir2 == 0:
                 pass
             else:
@@ -76,20 +87,28 @@ def choose(request):
 
 def show(request):
     global num
-    global cs
-    global ie
-    global auto
-    global ep
+    global cs1
+    global ie1
+    global auto1
+    global ep1
+    global cs2
+    global ie2
+    global auto2
+    global ep2
     global work
     global yan
     global abroad
     return HttpResponse(
         json.dumps({
             "num":num,
-            "CS":cs,
-            "ie":ie,
-            "auto":auto,
-            "ep":ep,
+            "CS1":cs1,
+            "ie1":ie1,
+            "auto1":auto1,
+            "ep1":ep1,
+            "CS2": cs2,
+            "ie2": ie2,
+            "auto2": auto2,
+            "ep2": ep2,
             "work":work,
             "yan":yan,
             "abroad":abroad
